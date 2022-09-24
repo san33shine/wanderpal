@@ -1,0 +1,32 @@
+{% extends 'home/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    {% block body %}
+    <div class="container">
+
+      <h1>Read Other Travellers' Stories Here!</h1>
+      {% for story in story_list %}
+
+      <div class="row">
+          <h5>{{ story.story_title }} by {{ story.nickname }} </h5>
+        </div>
+      <div class="row">
+        <div class="col-md-3 ">
+          <img src="{{ story.story_image }}" height = "100px" alt="Image not found">
+        </div>
+          {{ story.story_desc }}
+      </div>
+
+      {% endfor %}
+    </div>
+
+    {% endblock %}
+  </body>
+</html>
