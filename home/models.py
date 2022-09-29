@@ -18,11 +18,19 @@ class profile(models.Model):
         ('F', 'Female'),
         ('O','Others')
     )
+    TRUE_FALSE_CHOICES = (
+    (True, 'Yes'),
+    (False, 'No')
+    )
     name = models.CharField(max_length=200)
     email = models.CharField(max_length=200)
     socialmedia = models.CharField(max_length=200)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     age = models.IntegerField()
+    nationality = models.CharField(max_length=200)
+    language = models.CharField(max_length=200)
     travel_itinerary = models.CharField(max_length=1000)
     about_yourself = models.CharField(max_length=100)
+    pal_gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
+    pal_nationality = models.CharField(max_length=1, choices=TRUE_FALSE_CHOICES)
     #part to upload picture, think of video face recognition
