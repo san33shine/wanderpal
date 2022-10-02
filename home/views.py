@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import story, profile
 from django.template import loader
+from .forms import storyForm
 
 # Create your views here.
 def index(request):
@@ -36,3 +37,14 @@ def findyourpal(request):
 
     }
     return render(request, 'home/findyourpal.html', context)
+
+
+
+def add_story(request):
+    form = storyForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('index')
+
+    return render(request,'home/add_story.html', {'form':form})

@@ -12,6 +12,9 @@
     <div class="container">
 
       <h1>Read Other Travellers' Stories Here!</h1>
+      <h3>You can also contribute your story here</h3>
+      <a href="{% url 'add_story'%}">Submit your story here</a>
+
       {% for story in story_list %}
 
       <div class="row">

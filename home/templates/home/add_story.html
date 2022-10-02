@@ -1,0 +1,36 @@
+{% extends 'home/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Add Story</title>
+  </head>
+  <body>
+    {% block body %}
+    <div class="container">
+      <form class="" method="post">
+        {% csrf_token %}
+        <h5>Story Title:</h5>
+        {{form.story_title}}
+        <br>
+        <h5>Story Description:</h5>
+        {{form.story_desc}}
+        <br>
+        <h5>Nickname:</h5>
+        {{form.nickname}}
+        <br>
+        <h5>Story Image:</h5>
+        {{form.story_image}}
+
+        <br><br>
+        <button type="submit" name="button">Save</button>
+
+
+
+      </form>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>
