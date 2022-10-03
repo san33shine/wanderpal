@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import story, profile
 from django.template import loader
 from .forms import storyForm
+from django.core.mail import send_mail
 
 # Create your views here.
 def index(request):
@@ -20,17 +21,7 @@ def stories(request):
 
     return render(request, 'home/stories.html', context)
 
-def aboutus(request):
-    context = {
 
-    }
-    return render(request, 'home/aboutus.html', context)
-
-def contactus(request):
-    context = {
-
-    }
-    return render(request, 'home/contactus.html', context)
 
 def findyourpal(request):
     context = {
@@ -41,10 +32,10 @@ def findyourpal(request):
 
 
 def add_story(request):
-    form = storyForm(request.POST or None)
+    form = storyForm(request.POST, request.FILES)
 
     if form.is_valid():
         form.save()
-        return redirect('index')
+        return redirect('home:stories')
 
     return render(request,'home/add_story.html', {'form':form})

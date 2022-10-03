@@ -9,22 +9,18 @@
   <body>
     {% block body %}
     <div class="container">
-      <form class="" method="post">
+      <form class="" method="post" enctype='multipart/form-data'>
         {% csrf_token %}
         <h5>Story Title:</h5>
         {{form.story_title}}
-        <br>
         <h5>Story Description:</h5>
         {{form.story_desc}}
-        <br>
         <h5>Nickname:</h5>
         {{form.nickname}}
-        <br>
         <h5>Story Image:</h5>
         {{form.story_image}}
-
         <br><br>
-        <button type="submit" name="button">Save</button>
+        <button type="submit" name="button" class="btn btn-dark">Save</button>
 
 
 

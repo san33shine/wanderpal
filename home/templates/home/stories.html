@@ -4,7 +4,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Stories</title>
   </head>
   <body>
 
@@ -13,16 +13,14 @@
 
       <h1>Read Other Travellers' Stories Here!</h1>
       <h3>You can also contribute your story here</h3>
-      <a href="{% url 'add_story'%}">Submit your story here</a>
-
+      <a class='btn btn-secondary' href="{% url 'home:add_story'%}">Submit your story here</a>
       {% for story in story_list %}
-
       <div class="row">
           <h5>{{ story.story_title }} by {{ story.nickname }} </h5>
         </div>
       <div class="row">
         <div class="col-md-3 ">
-          <img src="{{ story.story_image }}" height = "120px" alt="Image not found">
+          <img src="{{ story.story_image.url }}" width = "200px" alt="Image not found" align='right'>
         </div>
           {{ story.story_desc }}
         <p></p>

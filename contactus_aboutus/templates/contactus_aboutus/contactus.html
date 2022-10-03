@@ -1,0 +1,31 @@
+{% extends 'contactus_aboutus/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Us</title>
+  </head>
+  <body>
+    {% block body %}
+    <div class="container">
+      <h1>Contact Us</h1>
+      <form class="" method="post" >
+        {% csrf_token %}
+        <h5>Subject:</h5>
+        {{form.contact_subject}}
+        <h5>Name:</h5>
+        {{form.contact_name}}
+        <h5>Email:</h5>
+        {{form.contact_email}}
+        <h5>Message:</h5>
+        {{form.contact_message}}
+        <br><br>
+        <button type="submit" name="button" class="btn btn-outline-dark">Save</button>
+
+      </form>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>

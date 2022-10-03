@@ -8,7 +8,8 @@ class story(models.Model):
     story_title = models.CharField(max_length=200)
     story_desc = models.CharField(max_length=2000)
     nickname = models.CharField(max_length=100)
-    story_image = models.CharField(max_length=500, default='https://cdn-icons-png.flaticon.com/512/169/169503.png')
+    story_image = models.ImageField(null=True, blank=True, upload_to='images/')
+
 
 class profile(models.Model):
     def __str__(self):
