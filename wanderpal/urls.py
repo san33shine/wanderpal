@@ -22,4 +22,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('home/', include('home.urls')),
     path('contactus_aboutus/', include('contactus_aboutus.urls')),
-] + static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+    path('findyourpalapp/', include('findyourpalapp.urls')),
+] + static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
