@@ -1,4 +1,5 @@
 {% extends 'home/base.html' %}
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -7,15 +8,9 @@
   </head>
   <body>
     {% block body %}
-      {% if messages %}
-        {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-          {{ message }}
+    <h1>You have logged out successfully</h1>
+    <h5>Click <a href="{% url 'findyourpalapp:login' %}">here</a> to login as another user</h5>
 
-        </div>
-        {% endfor %}
-      {% endif %}
     {% endblock %}
-
   </body>
 </html>

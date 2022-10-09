@@ -1,0 +1,20 @@
+{% extends 'home/base.html' %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% block body %}
+    {% if user.is_authenticated %}
+    <h5>You may click <a href="{% url 'findyourpalapp:logout' %}">here</a> to log out</h5>
+    <h1>Welcome to the inside world of Wanderpal</h1>
+    {% else %}
+    <h5>You are not logged in, please click <a href="{% url 'findyourpalapp:login' %}">here</a> to login</h5>
+
+    {% endif %}
+
+    {% endblock %}
+  </body>
+</html>

@@ -20,7 +20,10 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Welcome {username}, your account is created')
-            return redirect('findyourpalapp:fyp_index')
+            return redirect('findyourpalapp:login')
     else:
         form = RegisterForm()
     return render(request, 'findyourpalapp/register.html', {'form':form})
+
+def profilepage(request):
+    return render(request, 'findyourpalapp/profile.html')
