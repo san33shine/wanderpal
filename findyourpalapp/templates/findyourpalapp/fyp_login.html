@@ -1,0 +1,23 @@
+{% extends 'home/base.html' %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      {% block body %}
+        {% if messages %}
+          {% for message in messages %}
+          <div class="alert alert-{{ message.tag }}">
+            {{ message }}
+          </div>
+          {% endfor %}
+        {% endif %}
+      {% endblock %}
+    </div>
+
+
+  </body>
+</html>
