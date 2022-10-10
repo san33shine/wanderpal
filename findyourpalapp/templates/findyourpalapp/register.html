@@ -4,15 +4,21 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+
   </head>
   <body>
     {% block body %}
     <div class="container">
+
+      <div class="shadow p-4 mb-5 bg-body rounded">
+      <h1>Register</h1>
       <form method="post">
         {% csrf_token %}
         {{ form }}
-        <button type="submit">Signup</button>
+        <p></p>
+        <button type="submit" class="btn btn-secondary">Signup</button>
       </form>
+      </div>
     </div>
 
     {% endblock %}

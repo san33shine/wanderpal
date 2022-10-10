@@ -16,12 +16,20 @@
       </div>
       {% endfor %}
     {% endif %}
-    <form method="post">
-      {% csrf_token %}
-      {{ form }}
+    <div class="container">
 
-      <button type="submit">Login</button>
-    </form>
+      <div class="shadow p-4 mb-5 bg-body rounded">
+      <h1>Sign In</h1>
+      <form method="post">
+        {% csrf_token %}
+        <h5>Username: </h5>{{ form.username }}
+        <br><br>
+        <h5>Password: </h5>{{ form.password }}
+        <p></p>
+        <button type="submit" class="btn btn-secondary">Login</button>
+      </form>
+      </div>
+    </div>
     {% endblock %}
   </body>
 </html>

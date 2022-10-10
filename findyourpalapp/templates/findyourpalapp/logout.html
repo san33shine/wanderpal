@@ -8,8 +8,11 @@
   </head>
   <body>
     {% block body %}
-    <h1>You have logged out successfully</h1>
-    <h5>Click <a href="{% url 'findyourpalapp:login' %}">here</a> to login as another user</h5>
+    <div class="container">
+      <h1>You have logged out successfully</h1>
+      <h5>Click <a href="{% url 'findyourpalapp:login' %}">here</a> to login as another user</h5>
+    </div>
+
 
     {% endblock %}
   </body>
