@@ -23,4 +23,7 @@ urlpatterns = [
     path('home/', include('home.urls')),
     path('contactus_aboutus/', include('contactus_aboutus.urls')),
     path('findyourpalapp/', include('findyourpalapp.urls')),
-] + static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
+urlpatterns += [
+    # ... the rest of your URLconf goes here ...
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

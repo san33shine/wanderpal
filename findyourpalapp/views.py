@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.core.mail import send_mail
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import RegisterForm
 
@@ -25,5 +26,6 @@ def register(request):
         form = RegisterForm()
     return render(request, 'findyourpalapp/register.html', {'form':form})
 
+@login_required
 def profilepage(request):
     return render(request, 'findyourpalapp/profile.html')
