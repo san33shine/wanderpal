@@ -1,4 +1,4 @@
-{% extends 'home/base.html' %}
+{% extends 'findyourpalapp/base.html' %}
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -12,8 +12,15 @@
     <div class="container">
 
       <h1>Read Other Travellers' Stories Here!</h1>
+      {% if user.is_authenticated %}
       <h3>You can also contribute your story here</h3>
-      <a class='btn btn-secondary' href="{% url 'home:add_story'%}">Submit your story here</a>
+      <a class='btn btn-secondary' href="{% url 'home:add_story'%}">Submit your story here</a>\
+
+      {% else %}
+      <h5>Excited to share your story too, please join Wanderpal from<a href="{% url 'findyourpalapp:register' %}"> here</a></h5>
+
+
+      {% endif %}
       {% for story in story_list %}
       <div class="row">
           <h5>{{ story.story_title }} by {{ story.nickname }} </h5>
