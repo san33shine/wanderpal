@@ -17,7 +17,9 @@
       <a class='btn btn-secondary' href="{% url 'home:add_story'%}">Submit your story here</a>
 
       {% else %}
-      <h5>Excited to share your story too, please join Wanderpal from<a href="{% url 'findyourpalapp:register' %}"> here</a></h5>
+      <p>Excited to share your story too, please join Wanderpal from <a href="{% url 'findyourpalapp:register' %}">here</a>
+        <br>
+      If you already have an account, please login from <a href="{% url 'findyourpalapp:login' %}">here</a></p>
 
 
       {% endif %}
