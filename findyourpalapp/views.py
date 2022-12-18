@@ -8,11 +8,6 @@ from django.contrib import messages
 from .forms import RegisterForm
 
 # Create your views here.
-def fyp_index(request):
-    context = {
-
-    }
-    return render(request, 'findyourpalapp/fyp_index.html', context)
 
 def register(request):
     if request.method == 'POST':

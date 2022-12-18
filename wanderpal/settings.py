@@ -117,7 +117,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
-LOGIN_REDIRECT_URL ="findyourpalapp:fyp_index"
+LOGIN_REDIRECT_URL ="home:stories"
 LOGIN_URL = "findyourpalapp:login"
 
 MEDIA_ROOT = 'media/'
