@@ -13,7 +13,7 @@
 
       <h1>Read Other Travellers' Stories Here!</h1>
       {% if user.is_authenticated %}
-      <h3>You can also contribute your story here</h3>
+      <h3>Hi {{ user.username }}, you can also contribute your story here</h3>
       <a class='btn btn-secondary' href="{% url 'home:add_story'%}">Submit your story here</a>
 
       {% else %}
@@ -25,7 +25,7 @@
       {% endif %}
       {% for story in story_list %}
       <div class="row">
-          <h5>{{ story.story_title }} by {{ story.nickname }} </h5>
+          <h5>{{ story.story_title }} by {{ story.nickname }}</h5>
         </div>
       <div class="row">
         <div class="col-md-3 ">

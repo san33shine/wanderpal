@@ -9,7 +9,7 @@ class story(models.Model):
     story_desc = models.CharField(max_length=2000)
     nickname = models.CharField(max_length=100)
     story_image = models.ImageField(null=True, blank=True, upload_to='images/')
-
+    created = models.DateTimeField(auto_now_add=True)
 
 class profile(models.Model):
     def __str__(self):
