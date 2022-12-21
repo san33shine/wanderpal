@@ -35,6 +35,7 @@ def add_story(request):
     form = storyForm(request.POST, request.FILES)
 
     if form.is_valid():
+        form.instance.owner = request.user
         form.save()
         return redirect('home:stories')
 
