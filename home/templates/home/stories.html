@@ -29,7 +29,10 @@
         </div>
       <div class="row">
         <div class="col-md-3 ">
-          <img src="{{ story.story_image.url }}" width = "400px" alt="Image not found">
+          <figure>
+            <img src="{{ story.story_image.url }}" width = "400px" alt="Image not found">
+            <figcaption>{{ story.story_country.name }}</figcaption>
+          </figure>
         </div>
           {{ story.story_desc }}
         <p></p>

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django_countries.fields import CountryField
 
 
 # Create your models here.
@@ -13,6 +14,7 @@ class story(models.Model):
     story_image = models.ImageField(null=True, blank=True, upload_to='story_images/', default='story_images/default.jpg')
     created = models.DateTimeField(auto_now_add=True)
     owner = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
+    story_country = CountryField(blank_label='(select country)')
 
 
 class profile(models.Model):
