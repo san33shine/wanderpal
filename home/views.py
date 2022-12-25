@@ -13,7 +13,7 @@ def index(request):
     return render(request, 'home/index.html', context)
 
 def stories(request):
-    story_list = story.objects.all()
+    story_list = story.objects.all().order_by('-created')
     context = {
         'story_list': story_list,
 

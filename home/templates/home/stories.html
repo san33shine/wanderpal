@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link rel="stylesheet" href="text/css">
     <meta charset="utf-8">
     <title>Stories</title>
   </head>
@@ -11,10 +12,9 @@
     {% block body %}
     <div class="container">
 
-      <h1>Read Other Travellers' Stories Here!</h1>
+      <h1>Read other traveller's stories here</h1>
       {% if user.is_authenticated %}
-      <h3>Hi {{ user.username }}, you can also contribute your story here</h3>
-      <a class='btn btn-secondary' href="{% url 'home:add_story'%}">Submit your story here</a>
+      <a class='btn btn-secondary' href="{% url 'home:add_story'%}">Submit your travel highlight here</a>
 
       {% else %}
       <p>Excited to share your story too, please join Wanderpal from <a href="{% url 'findyourpalapp:register' %}">here</a>
@@ -25,11 +25,11 @@
       {% endif %}
       {% for story in story_list %}
       <div class="row">
-          <h5>{{ story.story_title }} by {{ story.nickname }}</h5>
+          <h5>{{ story.story_title }} by {{ story.owner }}</h5>
         </div>
       <div class="row">
         <div class="col-md-3 ">
-          <img src="{{ story.story_image.url }}" width = "200px" alt="Image not found" align='right'>
+          <img src="{{ story.story_image.url }}" width = "400px" alt="Image not found">
         </div>
           {{ story.story_desc }}
         <p></p>
