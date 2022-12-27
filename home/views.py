@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import story, profile
+from .models import story
 from django.template import loader
 from .forms import storyForm
 from django.core.mail import send_mail
